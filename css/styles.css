@@ -9,7 +9,7 @@ body {
 /* CAROUSEL STYLES */
 .carousel_container {
   position: relative;
-  height: 550px;
+  height: 70vh;
   width: 100%;
   margin-bottom: 15px;
 }
