@@ -1,0 +1,19 @@
+<div class="promo_boxes_container">
+    <div class="simple_header">
+        <h2>Flavours &amp; occasions</h2>
+    </div>
+    <div class="promo_slider">
+        <a href="#" class="promo_box" ng-repeat="box in promoBoxes" style="background-image: url({{box.img}});">
+            <div class="promo_box_copy_container">
+                <div class="promo_box_maincopy">
+                    {{box.mainText}}
+                </div>
+                <div class="promo_box_subcopy">
+                    <span class="promo_box_linktext">{{box.linkText}}</span>
+                    <span ng-include="'assets/svg/viewlink.svg'"></span>
+                </div>
+            </div>
+            <div class="promo_box_overlay"></div>
+        </a>
+    </div>
+</div>

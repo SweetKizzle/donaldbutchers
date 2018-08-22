@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>DONALD</title>
+  <meta name="description" content="Donald Butcher">
+  <meta name="author" content="Shag Diamond">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="js/libs/angular.min.js"></script>
+  <script type="text/javascript" src="js/data/carousel-data.js"></script>
+  <script type="text/javascript" src="js/data/featured-products.js"></script>
+  <script type="text/javascript" src="js/data/promo-boxes.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+
+<body ng-app="DonaldApp" ng-controller="homePageController">
+
+  <ng-include src="'html/components/header.html'"></ng-include>
+
+  <div class="carousel_container">
+    <div class="prev_container">
+      <div class="prev" ng-include="'assets/svg/carousel-left.svg'"></div>
+    </div>
+    <div class="next_container">
+      <div class="next" ng-include="'assets/svg/carousel-right.svg'"></div>
+    </div>
+    <div class="hero_carousel">
+      <div class="hero_carousel_item" ng-repeat="item in carousel" style="background-image: url({{item.img}});">
+        <div class="hero_carousel_copy-container">
+          <div class="hero_carousel_content">
+            <div class="hero_carousel_copy">
+              {{item.copy}}
+            </div>
+            <div class="hero_carousel_cta">
+              <a href="{{item.cta.url}}" class="btn feature_btn">{{item.cta.text}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="pagedown_container">
+    <div class="pagedown_graphic"></div>
+    <div class="pagedown_directional" ng-include="'assets/svg/pagedown.svg'"></div>
+  </a>
+
+  <div class="featured_products_container">
+    <div class="simple_header">
+      <h2>Best sellers</h2>
+    </div>
+    <div class="featured_products_inner">
+      <div class="featured_product" ng-repeat="(id, product) in featuredProducts">
+        <div class="featured_product_img" style="background-image: url({{product.img}});">
+          <div class="featured_product_overlay">
+            <div class="featured_product_view">
+              <div class="featured_product_viewlink">
+                View details
+                <span ng-include="'assets/svg/viewlink.svg'"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product_detail">
+          <div class="product_weight">
+            {{product.quantity}}
+          </div>
+          <div class="product_name">
+            {{product.name}}
+          </div>
+          <div class="product_pos">
+            <div class="product_rating_container">
+              <svg class="star-on icon-star-full" ng-repeat="i in getNumber(product.rating) track by $index">
+                <use xlink:href="#icon-star-full"></use>
+                <symbol id="icon-star-full" viewBox="0 0 32 32">
+                  <title>star-full</title>
+                  <path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path>
+                </symbol>
+              </svg>
+              <svg class="star-off icon-star-full" ng-repeat="i in getNumber(5 - product.rating)">
+                <use xlink:href="#icon-star-full"></use>
+                <symbol id="icon-star-full" viewBox="0 0 32 32">
+                  <title>star-full</title>
+                  <path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path>
+                </symbol>
+              </svg>
+            </div>
+            <div class="product_price_container">
+              <span>&pound;{{product.before_price}}</span>&pound;{{product.price}}
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="quantity_container">
+          <div class="quantity_control">
+            <span ng-include="'assets/svg/minus.svg'" ng-click="removeQuantity($index)"></span>
+            <span>
+              <input value="1" type="number" id="quantity_{{$index}}" class="quantity_manual" />
+            </span>
+            <span ng-include="'assets/svg/plus.svg'" ng-click="addQuantity($index)"></span>
+          </div>
+          <div class="quantity_add">
+            <a ng-click="" class="btn">Add</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-include src="'html/components/promo-boxes.html'"></ng-include>
+
+  <ng-include src="'html/components/testimonial.html'"></ng-include>
+
+  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/slick.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

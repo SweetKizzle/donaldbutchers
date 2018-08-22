@@ -1,0 +1,98 @@
+// main: styles.less
+
+.promo_boxes_container {
+  position: relative;
+  margin: 0 auto;
+  padding: 30px 50px 50px;
+  padding-right: 0;
+  overflow: hidden;
+  background-color: #f8f8f8;
+
+  .promo_slider {
+    font-size: 0;
+  }
+
+  .promo_box {
+    width: 515px;
+    height: 350px;
+    display: inline-block;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promo_box:last-child {
+    margin-right: 0;
+  }
+
+  .promo_box_copy_container {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    padding: 0 40px;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  .promo_box_maincopy {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 25px;
+    position: absolute;
+    top: -30px;
+
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .promo_box_subcopy {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    margin-bottom: 25px;
+    margin-right: 10px;
+    position: absolute;
+    left: -90px;
+    top: -25px;
+    opacity: 0;
+
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .promo_box_overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #00cccc;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .promo_box:hover .promo_box_overlay {
+    opacity: 1;
+  }
+
+  .promo_box:hover .promo_box_maincopy {
+    top: -100px;
+  }
+
+  .promo_box:hover .promo_box_subcopy {
+    left: 40px;
+    opacity: 1;
+  }
+}

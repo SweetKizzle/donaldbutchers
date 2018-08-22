@@ -1,0 +1,230 @@
+// main: styles.less
+
+.header_container {
+  width: 100%;
+  height: 140px;
+  font-size: 0;
+  display: flex;
+
+  .logo_container {
+    height: 100%;
+    text-align: center;
+    background-color: #151515;
+    flex-grow: 1;
+
+    img {
+      height: 115px;
+      width: 145px;
+      margin-top: 10px;
+    }
+  }
+
+  .menu_container {
+    height: 100%;
+    font-size: 0;
+    vertical-align: top;
+    background-color: #151515;
+    flex-grow: 20;
+    overflow-x: hidden;
+
+    .menu_upper {
+      width: 100%;
+      height: 65%;
+      display: flex;
+
+      .menu_primarylinks {
+        height: 100%;
+        display: inline-block;
+        background-color: #151515;
+        padding-top: 30px;
+        flex-grow: 5;
+
+        a {
+          position: relative;
+          font-size: 22px;
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          color: white;
+          display: inline-block;
+          margin-right: 20px;
+          text-decoration: none;
+          letter-spacing: 2px;
+        }
+
+        a::after {
+          content: "";
+          width: 0;
+          position: absolute;
+          height: 3px;
+          background-color: #00cccc;
+          bottom: -5px;
+          left: 0;
+          bottom: -10px;
+
+          -webkit-transition: width 0.5s ease-out;
+          transition: width 0.5s ease-out;
+        }
+
+        a:hover::after {
+          width: 100%;
+        }
+      }
+
+      .menu_search {
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        padding-top: 20px;
+        background-color: #151515;
+        flex-grow: 3;
+
+        input[type="text"] {
+          width: 100%;
+          padding: 10px 25px;
+          border: none;
+          border-radius: 30px;
+          font-size: 20px;
+          font-family: "Oswald", sans-serif;
+          color: #222222;
+        }
+
+        input[type="text"]::placeholder {
+          color: #222222;
+        }
+
+        input:focus {
+          outline: none;
+        }
+      }
+
+      .menu_shoptools {
+        height: 100%;
+        display: inline-block;
+        background-color: #151515;
+        vertical-align: top;
+        padding: 5px;
+        flex-grow: 1;
+        display: flex;
+
+        .user_section {
+          text-align: center;
+          flex-grow: 1;
+          padding-top: 2px;
+          margin: 5px;
+        }
+
+        .basket_section {
+          text-align: center;
+          flex-grow: 1;
+          margin: 5px;
+        }
+
+        .search_section {
+          text-align: center;
+          flex-grow: 1;
+          margin: 5px;
+          display: inline-block;
+        }
+      }
+    }
+
+    .menu_lower {
+      width: 100%;
+      min-width: 1000px;
+      height: 35%;
+      background-color: #151515;
+
+      a {
+        font-size: 18px;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        color: #a8a8a8;
+        display: inline-block;
+        margin-right: 25px;
+        text-decoration: none;
+        letter-spacing: 1px;
+
+        -webkit-transition: color 0.3s ease-out;
+        transition: color 0.3s ease-out;
+      }
+
+      a:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.user_section:hover .user_icon {
+  stroke: #00cccc;
+  fill: #00cccc;
+}
+
+.basket_section:hover .basket_icon {
+  stroke: #00cccc;
+  fill: #00cccc;
+}
+
+.search_section:hover .search_icon {
+  stroke: #00cccc;
+  fill: #00cccc;
+}
+
+.user_icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  stroke-width: 0;
+  stroke: white;
+  fill: white;
+  margin-top: 15px;
+
+  -webkit-transition: stroke 0.3s ease-out;
+  transition: stroke 0.3s ease-out;
+
+  -webkit-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+.basket_icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  stroke-width: 0;
+  stroke: white;
+  fill: white;
+  margin-top: 15px;
+
+  -webkit-transition: stroke 0.3s ease-out;
+  transition: stroke 0.3s ease-out;
+
+  -webkit-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+.search_icon {
+  display: none;
+  width: 30px;
+  height: 30px;
+  stroke-width: 0;
+  stroke: white;
+  fill: white;
+  margin-top: 22px;
+
+  -webkit-transition: stroke 0.3s ease-out;
+  transition: stroke 0.3s ease-out;
+
+  -webkit-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+@media screen and (max-width: 900px) {
+  .search_icon {
+    display: inline-block;
+  }
+
+  .header_container .menu_container .menu_upper .menu_search {
+    display: none;
+  }
+}

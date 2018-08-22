@@ -1,0 +1,27 @@
+<div class="carousel_container">
+    <div class="prev_container">
+        <div class="prev" ng-include="'assets/svg/carousel-left.svg'"></div>
+    </div>
+    <div class="next_container">
+        <div class="next" ng-include="'assets/svg/carousel-right.svg'"></div>
+    </div>
+    <div class="hero_carousel">
+        <div class="hero_carousel_item" ng-repeat="item in carousel" style="background-image: url({{item.img}});">
+            <div class="hero_carousel_copy-container">
+                <div class="hero_carousel_content">
+                    <div class="hero_carousel_copy">
+                        {{item.copy}}
+                    </div>
+                    <div class="hero_carousel_cta">
+                        <a href="{{item.cta.url}}" class="btn feature_btn">{{item.cta.text}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="pagedown_container">
+    <div class="pagedown_text">Discover more</div>
+    <div class="pagedown_graphic"></div>
+    <div class="pagedown_directional" ng-include="'assets/svg/pagedown.svg'"></div>
+</a>
