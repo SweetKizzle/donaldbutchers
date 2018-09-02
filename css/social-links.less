@@ -1,0 +1,80 @@
+// main: styles.less
+
+/* SOCIAL LINKS */
+
+.social_links {
+  display: flex;
+  padding-top: 50px;
+
+  .social_links_item {
+    flex-grow: 1;
+
+    a:hover .icon_twitter {
+      stroke: white;
+      fill: white;
+    }
+
+    a:hover .icon_facebook {
+      stroke: white;
+      fill: white;
+    }
+
+    a:hover .icon_youtube {
+      stroke: white;
+      fill: white;
+    }
+  }
+}
+
+.icon_twitter {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  stroke-width: 0;
+  stroke: #1DA1F2;
+  fill: #1DA1F2;
+
+  -webkit-transition: stroke 0.3s ease-out;
+  transition: stroke 0.3s ease-out;
+
+  -webkit-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+.icon_facebook {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  stroke-width: 0;
+  stroke: #4867AA;
+  fill: #4867AA;
+
+  -webkit-transition: stroke 0.3s ease-out;
+  transition: stroke 0.3s ease-out;
+
+  -webkit-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+.icon_youtube {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  stroke-width: 0;
+  stroke: #FF0000;
+  fill: #FF0000;
+
+  -webkit-transition: stroke 0.3s ease-out;
+  transition: stroke 0.3s ease-out;
+
+  -webkit-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+@media screen and (max-width: 376px) {
+
+  .social_links {
+    padding-top: 30px;
+    width: 50%;
+  }
+}

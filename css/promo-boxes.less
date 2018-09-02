@@ -10,6 +10,7 @@
 
   .promo_slider {
     font-size: 0;
+    position: relative;
   }
 
   .promo_box {
@@ -95,4 +96,19 @@
     left: 40px;
     opacity: 1;
   }
+}
+
+@media screen and (max-width: 376px) {
+  .promo_boxes_container {
+    padding: 30px 0 50px;
+
+    .promo_box {
+      width: 275px;
+    }
+
+    .promo_box_copy_container {
+      bottom: 26%;
+    }
+  }
+
 }

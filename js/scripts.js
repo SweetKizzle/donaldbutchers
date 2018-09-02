@@ -1,7 +1,9 @@
 $(document).ready(function() {
   $(".hero_carousel").slick({
     prevArrow: $(".prev_container"),
-    nextArrow: $(".next_container")
+    nextArrow: $(".next_container"),
+    //autoplay: true,
+    //autoplaySpeed: 3000
   });
 
   $(".promo_slider").slick({
@@ -49,4 +51,77 @@ app.controller("homePageController", function($scope) {
       $input.val(parseInt($input.val()) - 1);
     }
   };
+});
+
+app.controller("productListController", function($scope) {
+  $scope.productCategories = productCategories;
+});
+
+$('input[type="range"]').rangeslider({
+  polyfill : false,
+  onInit : function() {
+      this.output = $( '<div class="range-output" />' ).insertAfter(".price_slider").html( "£" + this.$element.val() );
+  },
+  onSlide : function( position, value ) {
+      this.output.html( "£" + value );
+  }
+});
+
+$(".product_category").on("click", function() {
+  var $this = $(this);
+
+  if ($this.hasClass("active")) {
+    $this.removeClass("active");
+  } else {
+    $this.addClass("active");
+  }
+});
+
+$(".category_reset_all").on("click", function() {
+  disableCategories();
+  clearSearch();
+  clearCheckboxes();
+  zeroPriceSlider();
+});
+
+function disableCategories() {
+  $(".product_category").removeClass("active");
+};
+
+function clearSearch() {
+  $(".product_filter_input input").val("");
+};
+
+function clearCheckboxes() {
+  $(".product_filter_checkboxes input:checkbox").prop("checked", false);
+};
+
+function zeroPriceSlider() {
+  $('input[type="range"]').val(50).change();
+}
+
+$(".category_reset").on("click", function() {
+  disableCategories();
+});
+
+$(".checkbox_reset").on("click", function() {
+  clearCheckboxes();
+});
+
+$(".priceslide_reset").on("click", function() {
+  zeroPriceSlider();
+});
+
+$(".minimizable .product_filter_title").on("click", function() {
+  var $element = $(this).closest(".minimizable");
+
+  if ($element.hasClass("open")) {
+    $element.removeClass("open");
+
+    $element.find(".filter_options").slideDown();
+  } else {
+    $element.addClass("open");
+
+    $element.find(".filter_options").slideUp();
+  }
 });

@@ -1,12 +1,13 @@
-<html lang="en">
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta charset="utf-8">
-
+  <meta charset="UTF-8">
+  <meta name="google" content="notranslate">
+  <meta http-equiv="Content-Language" content="en">
   <title>DONALD</title>
   <meta name="description" content="Donald Butcher">
   <meta name="author" content="Shag Diamond">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width">
 
   <script type="text/javascript" src="js/libs/angular.min.js"></script>
   <script type="text/javascript" src="js/data/carousel-data.js"></script>
@@ -30,10 +31,10 @@
 
   <div class="carousel_container">
     <div class="prev_container">
-      <div class="prev" ng-include="'assets/svg/carousel-left.svg'"></div>
+      <!--<div class="prev" ng-include="'assets/svg/carousel-left.svg'"></div>-->
     </div>
     <div class="next_container">
-      <div class="next" ng-include="'assets/svg/carousel-right.svg'"></div>
+      <!--<div class="next" ng-include="'assets/svg/carousel-right.svg'"></div>-->
     </div>
     <div class="hero_carousel">
       <div class="hero_carousel_item" ng-repeat="item in carousel" style="background-image: url({{item.img}});">
@@ -121,7 +122,10 @@
 
   <ng-include src="'html/components/testimonial.html'"></ng-include>
 
+  <ng-include src="'html/components/footer.html'"></ng-include>
+
   <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/rangeslider.min.js"></script>
   <script type="text/javascript" src="js/libs/slick.min.js"></script>
   <script src="js/scripts.js"></script>
 </body>

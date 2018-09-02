@@ -3,171 +3,217 @@
 /* CAROUSEL STYLES */
 
 .carousel_container {
-    position: relative;
-    height: 70vh;
-    width: 100%;
-    margin-bottom: 15px;
+  position: relative;
+  height: 70%;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.hero_carousel_item {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.hero_carousel_item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
+.hero_carousel_item:focus {
+  outline: none;
+}
+
+.hero_carousel_copy-container {
+  width: 100%;
+  height: 100%;
+}
+
+.hero_carousel_content {
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+.hero_carousel_copy {
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 6vw;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 5px;
+  line-height: 7vw;
+}
+
+.hero_carousel_cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.hero_carousel_icon {
+  display: inline-block;
+  width: 7vh;
+  height: 7vh;
+  stroke-width: 0;
+  stroke: white;
+  fill: white;
+}
+
+.prev_container,
+.next_container {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.next_container {
+  right: 0;
+}
+
+.prev,
+.next {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-top: 225%;
+}
+
+.prev {
+  left: 10%;
+}
+
+.next {
+  right: 10%;
+}
+
+.pagedown_container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+.pagedown_text {
+  left: 660px;
+  bottom: 70px;
+  z-index: 100;
+  position: absolute;
+  width: 200px;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  -webkit-animation: MoveUpDown 3s linear infinite;
+  animation: MoveUpDown 3s linear infinite;
+  letter-spacing: 2px;
+}
+
+.pagedown_graphic {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid white;
+  left: 50%;
+  z-index: 100;
+  position: absolute;
+  margin-left: -50px;
+  margin-top: -50px;
+
+  -webkit-transition: border-color 0.5s ease-out;
+  transition: border-color 0.5s ease-out;
+}
+
+.pagedown_graphic::before {
+  content: "Discover more";
+  left: -96px;
+  top: -30px;
+  position: absolute;
+  width: 200px;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 2px;
+
+  -webkit-animation: MoveUpDown 3s linear infinite;
+  animation: MoveUpDown 3s linear infinite;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0px, 5px, 0px);
+    transform: translate3d(0px, 5px, 0px);
   }
-  
-  .hero_carousel_item {
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
+  50% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.pagedown_directional {
+  left: 50%;
+  z-index: 100;
+  position: absolute;
+  margin-left: -100px;
+  margin-top: -25px;
+  width: 200px;
+}
+
+.pagedown_icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  stroke-width: 0;
+  stroke: black;
+  fill: black;
+
+  -webkit-transition: fill 0.5s ease-out;
+  transition: fill 0.5s ease-out;
+
+  -webkit-transition: stroke 0.5s ease-out;
+  transition: stroke 0.5s ease-out;
+}
+
+@media screen and (max-width: 376px) {
+  .carousel_container {
+    height: 50%;
   }
 
-  .hero_carousel_item:focus {
-    outline: none;
+  .prev_container,
+  .next_container {
+    width: 50px;
   }
-  
-  .hero_carousel_copy-container {
-    width: 100%;
-    height: 100%;
-  }
-  
+
   .hero_carousel_content {
-    width: 65vw;
-    margin: 0 auto;
-    margin-top: 20vh;
+    margin-top: 10vh;
   }
   
   .hero_carousel_copy {
-    text-align: center;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 4.5vw;
-    font-weight: 600;
-    font-family: "Oswald", sans-serif;
-    letter-spacing: 5px;
-    line-height: 70px;
+    font-size: 30px;
+    line-height: 35px;
+  }
+  
+  .pagedown_graphic::before {
+    font-size: 12px;
   }
   
   .hero_carousel_cta {
-    text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
   }
-  
-  .hero_carousel_icon {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    stroke-width: 0;
-    stroke: white;
-    fill: white;
-  }
-  
-  .prev_container,
-  .next_container {
-    position: absolute;
-    width: 100px;
-    height: 100%;
-    z-index: 100;
-    cursor: pointer;
-  }
-  
-  .next_container {
-    right: 0;
-  }
-  
-  .prev,
-  .next {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin-top: 225%;
-  }
-  
-  .prev {
-    left: 40px;
-  }
-  
-  .pagedown_container {
-    width: 100%;
-    position: relative;
-    text-align: center;
-    display: block;
-    cursor: pointer;
-  }
-  
-  .pagedown_text {
-    left: 660px;
-    bottom: 70px;
-    z-index: 100;
-    position: absolute;
-    width: 200px;
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-    color: white;
-    -webkit-animation: MoveUpDown 3s linear infinite;
-    animation: MoveUpDown 3s linear infinite;
-    letter-spacing: 2px;
-  }
-  
-  .pagedown_graphic {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 50px solid white;
-    left: 50%;
-    z-index: 100;
-    position: absolute;
-    margin-left: -50px;
-    margin-top: -50px;
-  
-    -webkit-transition: border-color 0.5s ease-out;
-    transition: border-color 0.5s ease-out;
-  }
-
-  .pagedown_graphic::before {
-    content: "Discover more";
-    left: -96px;
-    top: -30px;
-    position: absolute;
-    width: 200px;
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-    color: white;
-    letter-spacing: 2px;
-
-    -webkit-animation: MoveUpDown 3s linear infinite;
-    animation: MoveUpDown 3s linear infinite;
-    
-  }
-
-  @keyframes MoveUpDown {
-    0%,
-    100% {
-      -webkit-transform: translate3d(0px, 5px, 0px);
-      transform: translate3d(0px, 5px, 0px);
-    }
-    50% {
-      -webkit-transform: translate3d(0px, 0px, 0px);
-      transform: translate3d(0px, 0px, 0px);
-    }
-  }  
-  
-  .pagedown_directional {
-    left: 50%;
-    z-index: 100;
-    position: absolute;
-    margin-left: -100px;
-    margin-top: -25px;
-    width: 200px;
-  }
-  
-  .pagedown_icon {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    stroke-width: 0;
-    stroke: black;
-    fill: black;
-  
-    -webkit-transition: fill 0.5s ease-out;
-    transition: fill 0.5s ease-out;
-  
-    -webkit-transition: stroke 0.5s ease-out;
-    transition: stroke 0.5s ease-out;
-  }
+}

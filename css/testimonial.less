@@ -4,9 +4,14 @@
 .testimonial_container {
   position: relative;
   margin: 0 auto;
-  padding: 30px 50px 50px;
+  padding: 30px 50px 0;
   width: 100%;
   font-size: 0;
+
+  .testimonial {
+    width: 100%;
+    position: relative;
+  }
 
   .testimonial_primary {
     position: relative;
@@ -146,5 +151,25 @@
   .testimonial_secondary:hover .testimonial_secondary_subcopy {
     left: 50px;
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .testimonial_container {
+    padding: 30px 0 0;
+
+    .testimonial_primary {
+      width: 100%;
+      display: block;
+    }
+
+    .testimonial_secondary {
+      width: 100%;
+      display: block;
+    }
+
+    .testimonial_secondary {
+      position: relative;
+    }
   }
 }

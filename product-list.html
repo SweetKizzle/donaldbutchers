@@ -1,0 +1,204 @@
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <title>DONALD</title>
+    <meta name="description" content="Donald Butcher">
+    <meta name="author" content="Shag Diamond">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="js/libs/angular.min.js"></script>
+    <script type="text/javascript" src="js/data/product-categories.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+
+<body ng-app="DonaldApp" ng-controller="productListController">
+
+    <ng-include src="'html/components/header.html'"></ng-include>
+
+    <div class="product_list_container">
+        <div class="product_list_left">
+            <div class="product_filter_container">
+                <div class="product_filter_header">
+                    <div class="product_filter_title noselect">
+                        <h4>Filter items</h4>
+                    </div>
+                    <div class="product_filter_reset category_reset_all">
+                        <a href="#">Reset all filters</a>
+                    </div>
+                </div>
+                <div class="product_filter_input">
+                    <input type="text" name="product_search" placeholder="Beef">
+                </div>
+            </div>
+            <div class="product_filter_container minimizable">
+                <div class="product_filter_header">
+                    <div class="product_filter_title noselect">
+                        <h4>Categories <span><ng-include src="'assets/svg/directional.svg'"></ng-include></span></h4>
+                    </div>
+                    <div class="product_filter_reset category_reset">
+                        <a href="#">Clear</a>
+                    </div>
+                </div>
+                <div class="product_filter_categories filter_options">
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Beef</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Pork</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Lamb</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Poultry</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Puddings</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Cooked</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Pies</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Festive</span>
+                    </div>
+                    <div class="product_category">
+                        <span class="category_icon">
+                            <ng-include src="'assets/svg/fire.svg'"></ng-include>
+                        </span>
+                        <span class="category_label noselect">Other</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product_filter_container minimizable">
+                <div class="product_filter_header">
+                    <div class="product_filter_title noselect">
+                        <h4>Cut <span><ng-include src="'assets/svg/directional.svg'"></ng-include></span></h4>
+
+                    </div>
+                    <div class="product_filter_reset checkbox_reset">
+                        <a href="#">Clear</a>
+                    </div>
+                </div>
+                <div class="product_filter_checkboxes filter_options scrollbar">
+                    <ul class="form_checkboxlist">
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                            <label for="styled-checkbox-1">Steaks</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+                            <label for="styled-checkbox-2">Minced & Diced</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
+                            <label for="styled-checkbox-3">Roasts</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value4">
+                            <label for="styled-checkbox-4">Slow Cooking</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="value5">
+                            <label for="styled-checkbox-5">Beef Offal</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-6" type="checkbox" value="value6">
+                            <label for="styled-checkbox-6">Burgers & Brochettes</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-7" type="checkbox" value="value7">
+                            <label for="styled-checkbox-7">Sausages</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-8" type="checkbox" value="value8">
+                            <label for="styled-checkbox-8">Other</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product_filter_container minimizable">
+                <div class="product_filter_header">
+                    <div class="product_filter_title noselect">
+                        <h4>Price <span><ng-include src="'assets/svg/directional.svg'"></ng-include></span></h4>
+
+                    </div>
+                    <div class="product_filter_reset priceslide_reset">
+                        <a href="#">Clear</a>
+                    </div>
+                </div>
+                <div class="product_filter_priceslider filter_options">
+                    <div class="rangeslider price_slider">
+                        <input type="range" min="5" max="200" step="5" value="50">
+                    </div>
+                </div>
+            </div>
+            <div class="product_filter_container minimizable">
+                <div class="product_filter_header">
+                    <div class="product_filter_title noselect">
+                        <h4>Nutrition value <span><ng-include src="'assets/svg/directional.svg'"></ng-include></span></h4>
+
+                    </div>
+                    <div class="product_filter_reset nutrition_reset">
+                        <a href="#">Clear</a>
+                    </div>
+                </div>
+                <div class="product_filter_nutrition filter_options">
+                    <div style="height: 100px;">
+                        placeholder
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product_list_right">
+
+        </div>
+    </div>
+
+    <ng-include src="'html/components/footer.html'"></ng-include>
+
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/rangeslider.min.js"></script>
+    <script type="text/javascript" src="js/libs/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
