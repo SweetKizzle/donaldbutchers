@@ -4,7 +4,7 @@
 
 .carousel_container {
   position: relative;
-  height: 70%;
+  height: 80%;
   width: 100%;
   margin-bottom: 15px;
 }
@@ -39,12 +39,14 @@
 .hero_carousel_copy-container {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
 }
 
 .hero_carousel_content {
   width: 80vw;
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 10%;
 }
 
 .hero_carousel_copy {
@@ -150,19 +152,62 @@
   color: white;
   letter-spacing: 2px;
 
-  -webkit-animation: MoveUpDown 3s linear infinite;
-  animation: MoveUpDown 3s linear infinite;
+  -webkit-animation: jump 1.5s ease 0s infinite normal;
+  animation: jump 1.5s ease 0s infinite normal;
 }
 
-@keyframes MoveUpDown {
-  0%,
-  100% {
-    -webkit-transform: translate3d(0px, 5px, 0px);
-    transform: translate3d(0px, 5px, 0px);
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-10px);
   }
   50% {
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  80% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -180,8 +225,8 @@
   width: 16px;
   height: 16px;
   stroke-width: 0;
-  stroke: black;
-  fill: black;
+  stroke: #151515;
+  fill: #151515;
 
   -webkit-transition: fill 0.5s ease-out;
   transition: fill 0.5s ease-out;
@@ -190,30 +235,60 @@
   transition: stroke 0.5s ease-out;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1024px) {
+  .carousel_container {
+    margin-top: 63px;
+    height: 70%;
+  }
+
+  .hero_carousel_content {
+    margin-top: 30%;
+  }
+
+  .hero_carousel_copy {
+    letter-spacing: 2px;
+    font-size: 70px;
+    line-height: 75px;
+  }
+}
+
+@media screen and (max-width: 743px) {
+
+  .hero_carousel_content {
+    margin-top: 20%;
+  }
+}
+
+@media screen and (max-width: 580px) {
   .carousel_container {
     height: 50%;
   }
 
+  .hero_carousel_content {
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width: 415px) {
   .prev_container,
   .next_container {
     width: 50px;
   }
 
   .hero_carousel_content {
-    margin-top: 10vh;
+    margin-top: 10%;
   }
-  
+
   .hero_carousel_copy {
     font-size: 30px;
     line-height: 35px;
   }
-  
+
   .pagedown_graphic::before {
     font-size: 12px;
   }
-  
+
   .hero_carousel_cta {
-    margin-top: 30px;
+    margin-top: 25px;
   }
 }

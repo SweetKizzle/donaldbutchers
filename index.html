@@ -1,4 +1,4 @@
-<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 
   <script type="text/javascript" src="js/libs/angular.min.js"></script>
   <script type="text/javascript" src="js/data/carousel-data.js"></script>
-  <script type="text/javascript" src="js/data/featured-products.js"></script>
+  <script type="text/javascript" src="js/data/products.js"></script>
   <script type="text/javascript" src="js/data/promo-boxes.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,600" rel="stylesheet">
@@ -27,9 +27,49 @@
 
 <body ng-app="DonaldApp" ng-controller="homePageController">
 
-  <ng-include src="'html/components/header.html'"></ng-include>
+  <div class="header_container">
+    <a href="/" class="logo_container">
+      <img src="https://sweetkizzle.github.io/donaldbutchers/assets/images/donald_logo.png" />
+    </a>
+    <div class="menu_container">
+      <div class="menu_upper">
+        <div class="menu_primarylinks">
+          <a href="/product-list.html">Store</a>
+          <a href="#">Academy</a>
+          <a href="#">Community</a>
+        </div>
+        <div class="menu_search">
+          <input type="text" name="product_search" placeholder="Type here to search">
+        </div>
+        <div class="menu_shoptools">
+          <a href="#" class="menu_section">
+            <ng-include src="'assets/svg/menu.svg'"></ng-include>
+          </a>
+          <a href="#" class="search_section">
+            <ng-include src="'assets/svg/search.svg'"></ng-include>
+          </a>
+          <a href="#" class="user_section">
+            <ng-include src="'assets/svg/user.svg'"></ng-include>
+          </a>
+          <a href="#" class="basket_section">
+            <ng-include src="'assets/svg/basket.svg'"></ng-include>
+          </a>
+        </div>
+      </div>
+      <div class="menu_lower">
+        <a href="/product-list.html?category=Beef">Beef</a>
+        <a href="/product-list.html?category=Pork">Pork</a>
+        <a href="/product-list.html?category=Lamb">Lamb</a>
+        <a href="/product-list.html?category=Poultry">Poultry</a>
+        <a href="/product-list.html?category=Game">Game</a>
+        <a href="/product-list.html?category=Festive">Festive</a>
+        <a href="/product-list.html?category=Pies">Pies</a>
+        <a href="/product-list.html?category=Puddings">Puddings</a>
+      </div>
+    </div>
+  </div>
 
-  <div class="carousel_container">
+  <div class="carousel_container first_component">
     <div class="prev_container">
       <!--<div class="prev" ng-include="'assets/svg/carousel-left.svg'"></div>-->
     </div>
@@ -127,7 +167,8 @@
   <script type="text/javascript" src="js/libs/jquery.min.js"></script>
   <script type="text/javascript" src="js/libs/rangeslider.min.js"></script>
   <script type="text/javascript" src="js/libs/slick.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/angular-app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>

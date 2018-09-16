@@ -11,6 +11,7 @@
   .testimonial {
     width: 100%;
     position: relative;
+    padding-top: 30px;
   }
 
   .testimonial_primary {
@@ -154,7 +155,19 @@
   }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 768px) {
+  .testimonial_container {
+    .testimonial_primary {
+      width: 50%;
+    }
+
+    .testimonial_secondary {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
   .testimonial_container {
     padding: 30px 0 0;
 

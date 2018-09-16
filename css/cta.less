@@ -3,100 +3,106 @@
 /* CTAs */
 
 .btn {
-    display: block;
-    color: #ffffff;
-    padding: 10px;
-    background-color: #000000;
-    text-transform: uppercase;
+  display: block;
+  color: #ffffff;
+  padding: 10px;
+  background-color: #000000;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-size: 19px;
+  text-decoration: none;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.btn:hover {
+  background-color: #00cccc;
+}
+
+.feature_btn {
+  position: relative;
+  width: 160px;
+  padding: 25px;
+  line-height: 0;
+}
+
+.feature_btn:before,
+.feature_btn:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 32%;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.feature_btn:before {
+  border-right: 10px solid black;
+  left: -5%;
+}
+
+.feature_btn:after {
+  border-left: 10px solid black;
+  left: 98%;
+}
+
+.feature_btn:hover:before {
+  border-right-color: #00cccc;
+}
+
+.feature_btn:hover:after {
+  border-left-color: #00cccc;
+}
+
+.link_section {
+  width: 100%;
+  text-align: center;
+  margin: 50px 0;
+
+  a {
+    font-size: 25px;
+    font-weight: 600;
     font-family: "Oswald", sans-serif;
-    font-size: 19px;
+    text-transform: uppercase;
     text-decoration: none;
-    margin: 0 auto;
-    letter-spacing: 2px;
-    cursor: pointer;
-  
-    -webkit-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-  }
-  
-  .btn:hover {
-    background-color: #00cccc;
-  }
-  
-  .feature_btn {
+    color: black;
     position: relative;
-    width: 160px;
-    padding: 25px;
-    line-height: 0;
+
+    .viewlink_icon {
+      fill: black;
+      stroke: black;
+    }
   }
-  
-  .feature_btn:before,
-  .feature_btn:after {
+
+  a::after {
     content: "";
     width: 0;
-    height: 0;
     position: absolute;
-    top: 32%;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-  
-    -webkit-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-  }
-  
-  .feature_btn:before {
-    border-right: 10px solid black;
-    left: -5%;
-  }
-  
-  .feature_btn:after {
-    border-left: 10px solid black;
-    left: 98%;
-  }
-  
-  .feature_btn:hover:before {
-    border-right-color: #00cccc;
-  }
-  
-  .feature_btn:hover:after {
-    border-left-color: #00cccc;
+    height: 3px;
+    background-color: #00cccc;
+    bottom: -5px;
+    left: 0;
+    bottom: -10px;
+
+    -webkit-transition: width 0.5s ease-out;
+    transition: width 0.5s ease-out;
   }
 
-  .link_section {
+  a:hover::after {
     width: 100%;
-    text-align: center;
-    margin: 50px 0;
-
-    a {
-      font-size: 25px;
-      font-weight: 600;
-      font-family: "Oswald", sans-serif;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: black;
-      position: relative;
-      
-      .viewlink_icon {
-        fill: black;
-        stroke: black;
-      }
-    }
-
-    a::after {
-      content: "";
-      width: 0;
-      position: absolute;
-      height: 3px;
-      background-color: #00cccc;
-      bottom: -5px;
-      left: 0;
-      bottom: -10px;
-
-      -webkit-transition: width 0.5s ease-out;
-      transition: width 0.5s ease-out;
-    }
-
-    a:hover::after {
-      width: 100%;
-    }
   }
+}
+
+@media screen and (max-width: 415px) {
+  .feature_btn {
+    padding: 20px;
+  }
+}

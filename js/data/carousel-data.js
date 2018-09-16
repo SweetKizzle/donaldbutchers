@@ -1,6 +1,6 @@
 var carousel = [
   {
-    img: "https://www.jamesharrisbutchers.co.uk/_webedit/cached-images/23.jpg",
+    img: "https://sweetkizzle.github.io/donaldbutchers/assets/images/carousel/lamb-chops.jpg",
     copy: "Scotland's #1 online butcher & academy",
     cta: {
       text: "Shop now",
@@ -8,7 +8,7 @@ var carousel = [
     }
   },
   {
-    img: "https://burylanefarmshop.co.uk/wp-content/uploads/2013/08/Butchers-cutting-pork-chops.jpg",
+    img: "https://sweetkizzle.github.io/donaldbutchers/assets/images/carousel/butcher-bacon.jpg",
     copy: "Scotland's #1 online butcher & academy",
     cta: {
       text: "Shop now",
@@ -16,7 +16,7 @@ var carousel = [
     }
   },
   {
-    img: "https://cms.pm/uploads/abcateringbutchers.seesites.biz_--_28253533.jpg",
+    img: "https://sweetkizzle.github.io/donaldbutchers/assets/images/carousel/flank-steak.jpg",
     copy: "Scotland's #1 online butcher & academy",
     cta: {
       text: "Shop now",
