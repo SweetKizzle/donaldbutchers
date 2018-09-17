@@ -172,7 +172,7 @@ $('.menu_search input[type="text"]').bind("enterKey", function(e) {
   var inputText = $(this).val();
 
   if (inputText && inputText.length > 0 && inputText != 'undefined') {
-    window.location.replace('/search-results.html?search=' + inputText);
+    window.location.replace('search-results.html?search=' + inputText);
   }
 });
 $('.menu_search input[type="text"]').keyup(function(e) {
