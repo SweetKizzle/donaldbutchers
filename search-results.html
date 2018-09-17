@@ -55,14 +55,14 @@
                 </div>
             </div>
             <div class="menu_lower">
-                <a href="/product-list.html?category=Beef">Beef</a>
-                <a href="/product-list.html?category=Pork">Pork</a>
-                <a href="/product-list.html?category=Lamb">Lamb</a>
-                <a href="/product-list.html?category=Poultry">Poultry</a>
-                <a href="/product-list.html?category=Game">Game</a>
-                <a href="/product-list.html?category=Festive">Festive</a>
-                <a href="/product-list.html?category=Pies">Pies</a>
-                <a href="/product-list.html?category=Puddings">Puddings</a>
+                <a href="product-list.html?category=Beef">Beef</a>
+                <a href="product-list.html?category=Pork">Pork</a>
+                <a href="product-list.html?category=Lamb">Lamb</a>
+                <a href="product-list.html?category=Poultry">Poultry</a>
+                <a href="product-list.html?category=Game">Game</a>
+                <a href="product-list.html?category=Festive">Festive</a>
+                <a href="product-list.html?category=Pies">Pies</a>
+                <a href="product-list.html?category=Puddings">Puddings</a>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
             Results for &lsquo;<span>{{queryParam}}</span>&rsquo;
         </div>
         <div class="results_count">
-            {{filteredProducts.length}} results found <a href="/product-list.html?search={{queryParam}}">Refine your search?</a>
+            {{filteredProducts.length}} results found <a href="product-list.html?search={{queryParam}}">Refine your search?</a>
         </div>
         <div class="search_results">
             <a href="#" class="search_result" ng-repeat="(id, product) in products | filter: filterBySearch as filteredProducts">
