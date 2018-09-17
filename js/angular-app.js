@@ -104,13 +104,13 @@ app.controller("productListController", function($scope) {
     var queryParam = getParameterByName("category");
 
     if (queryParam && queryParam != "undefined") {
-      window.location.replace("/product-list.html");
+      window.location.replace("product-list.html");
     }
 
     queryParam = getParameterByName("search");
 
     if (queryParam && queryParam != "undefined") {
-      window.location.replace("/product-list.html");
+      window.location.replace("product-list.html");
     }
 
     $scope.clearSearchFilter();
